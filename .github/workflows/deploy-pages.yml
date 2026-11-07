@@ -1,5 +1,6 @@
-name: Publicar app web (iPhone)
+name: Publicar site (iPhone + página de instalação)
 on:
+  push:
   workflow_dispatch:
 permissions:
   contents: read
@@ -11,8 +12,12 @@ jobs:
     environment: { name: github-pages, url: "${{ steps.d.outputs.page_url }}" }
     steps:
       - uses: actions/checkout@v4
+      - run: |
+          mkdir -p _site/app
+          cp site/index.html _site/index.html
+          cp -r www/. _site/app/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
-        with: { path: www }
+        with: { path: _site }
       - id: d
         uses: actions/deploy-pages@v4

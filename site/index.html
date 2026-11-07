@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0f766e">
+<title>Finanças da Casa — Instalar</title>
+<link rel="icon" href="app/icons/icon-192.png">
+<style>
+:root{--pri:#0f766e;--bg:#f4f6f5;--card:#fff;--ink:#14201d;--muted:#66736f;--line:#e3e8e6}
+@media (prefers-color-scheme:dark){:root{--bg:#0d1412;--card:#16201d;--ink:#e8efec;--muted:#93a39e;--line:#24322e}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.hero{background:var(--pri);color:#fff;text-align:center;padding:40px 20px 34px}
+.hero img{width:88px;height:88px;border-radius:22px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.hero h1{margin:14px 0 6px;font-size:26px}
+.hero p{margin:0;opacity:.9}
+main{max-width:520px;margin:0 auto;padding:18px 16px 40px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:14px}
+.card h2{margin:0 0 4px;font-size:19px}
+.card .sub{color:var(--muted);font-size:14px;margin:0 0 14px}
+.btn{display:block;text-align:center;background:var(--pri);color:#fff;text-decoration:none;font-weight:650;padding:15px;border-radius:14px;font-size:16px}
+.btn.alt{background:transparent;color:var(--pri);border:1.5px solid var(--pri);margin-top:10px}
+ol{margin:12px 0 0;padding-left:22px;color:var(--ink)}
+ol li{margin:6px 0}
+.mine{outline:3px solid var(--pri);outline-offset:2px}
+.tag{display:none;background:var(--pri);color:#fff;font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;margin-left:8px;vertical-align:middle}
+.mine .tag{display:inline-block}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:14px;color:var(--muted)}
+.foot{text-align:center;color:var(--muted);font-size:13px;margin-top:18px}
+</style>
+</head>
+<body>
+<div class="hero">
+  <img src="app/icons/icon-512.png" alt="">
+  <h1>Finanças da Casa</h1>
+  <p>Controle de gastos, contas e forma de pagamento</p>
+</div>
+<main>
+  <div class="card" id="android">
+    <h2>📱 Android <span class="tag">Seu celular</span></h2>
+    <p class="sub">Instale o aplicativo (APK)</p>
+    <a class="btn" href="https://github.com/guizinborgess/Financas-casa/releases/download/apk/financas-casa.apk">Baixar para Android</a>
+    <ol>
+      <li>Toque em <b>Baixar para Android</b>.</li>
+      <li>Abra o arquivo <b>financas-casa.apk</b> baixado.</li>
+      <li>Se o celular pedir, permita <b>instalar apps desta fonte</b> e toque em <b>Instalar</b>.</li>
+    </ol>
+  </div>
+
+  <div class="card" id="ios">
+    <h2>🍎 iPhone <span class="tag">Seu celular</span></h2>
+    <p class="sub">Adicione à tela de início pelo Safari — funciona como app, até sem internet</p>
+    <a class="btn" href="app/">Abrir o app</a>
+    <ol>
+      <li>Abra esta página no <b>Safari</b>.</li>
+      <li>Toque em <b>Abrir o app</b>.</li>
+      <li>Toque no botão <b>Compartilhar</b> (quadrado com seta para cima).</li>
+      <li>Escolha <b>Adicionar à Tela de Início</b> → <b>Adicionar</b>.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>O que o app faz</h2>
+    <div class="feat">
+      <div>💸 Entradas e saídas</div><div>💳 Pix, crédito, débito…</div>
+      <div>👥 Quem pagou</div><div>📅 Contas com vencimento</div>
+      <div>📊 Resumo do mês</div><div>📄 Exporta planilha</div>
+    </div>
+    <p class="sub" style="margin:14px 0 0">Os dados ficam salvos só no seu celular. Use <b>Ajustes → Exportar</b> para fazer backup.</p>
+  </div>
+  <div class="foot">Também funciona no computador: <a href="app/">abrir no navegador</a></div>
+</main>
+<script>
+const ua = navigator.userAgent;
+const isIOS = /iPhone|iPad|iPod/.test(ua) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1);
+const isAndroid = /Android/.test(ua);
+if(isIOS || isAndroid){
+  const mine = document.getElementById(isIOS?'ios':'android'), other = document.getElementById(isIOS?'android':'ios');
+  mine.classList.add('mine'); mine.parentNode.insertBefore(mine, mine.parentNode.firstChild);
+}
+</script>
+</body>
+</html>

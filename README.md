@@ -1,5 +1,9 @@
 # Finanças da Casa
 
+**Instalar:** https://guizinborgess.github.io/Financas-casa/ (Android baixa o APK, iPhone instala pelo Safari)
+
+APK direto: https://github.com/guizinborgess/Financas-casa/releases/download/apk/financas-casa.apk
+
 App para controle financeiro da casa: entradas, saídas, forma de pagamento
 (Pix, crédito, débito, dinheiro, boleto), contas fixas com vencimento e backup.
 Funciona offline. Os dados ficam salvos no próprio aparelho.
